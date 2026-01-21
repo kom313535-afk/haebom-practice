@@ -3,229 +3,136 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>지원사업 제안 페이지 예시 | 해봄 시리즈</title>
-  <meta name="description" content="지원사업 제출용 예시 랜딩페이지. 사업개요, 일정, 예산 요약, 성과지표를 한 페이지에 정리합니다." />
+  <title>충청권 국악문화향유거점 활성화 | 마당 콘서트 & 전시 | 운영 제안(예시)</title>
+  <meta name="description" content="충청권 국악문화향유거점 활성화 사업(예시) 홈페이지형 요약본 - 콘서트 2회 및 전시 2개 공간 운영 계획" />
 
   <style>
     :root{
-      --ink:#2b2a33;
-      --muted:#5f5d6b;
-      --paper:#ffffff;
-      --line:rgba(43,42,51,.10);
-
-      --lav:#c9b7ff;
-      --mauve:#d6a6c8;
-      --rose:#f2b5c6;
-
+      --ink:#1f1f26;
+      --muted:#5c5a68;
+      --line:rgba(31,31,38,.10);
       --card:rgba(255,255,255,.78);
-      --card2:rgba(255,255,255,.62);
-      --shadow: 0 14px 38px rgba(0,0,0,.10);
-      --shadow2: 0 10px 24px rgba(0,0,0,.08);
-      --radius: 18px;
-      --radius2: 26px;
+      --card2:rgba(255,255,255,.60);
+      --shadow: 0 16px 42px rgba(0,0,0,.10);
+      --shadow2: 0 10px 26px rgba(0,0,0,.08);
+      --r:18px;
+      --r2:26px;
+      --max:1120px;
 
-      --max: 1120px;
+      --lav:rgba(197,183,255,.55);
+      --rose:rgba(244,182,199,.50);
+      --mauve:rgba(219,168,204,.40);
     }
 
     *{ box-sizing:border-box; }
-    html,body{ height:100%; }
     body{
       margin:0;
       color:var(--ink);
-      background:
-        radial-gradient(1200px 700px at 20% 20%, rgba(201,183,255,.45), transparent 60%),
-        radial-gradient(900px 600px at 80% 25%, rgba(242,181,198,.35), transparent 62%),
-        radial-gradient(900px 700px at 35% 85%, rgba(214,166,200,.30), transparent 60%),
-        linear-gradient(180deg, #fbf8ff 0%, #fff 35%, #fff 100%);
       font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
-      line-height:1.55;
-      letter-spacing:-0.2px;
+      line-height:1.6;
+      background:
+        radial-gradient(1200px 700px at 18% 16%, var(--lav), transparent 60%),
+        radial-gradient(900px 640px at 82% 20%, var(--rose), transparent 62%),
+        radial-gradient(900px 700px at 38% 86%, var(--mauve), transparent 60%),
+        linear-gradient(180deg, #fbf8ff 0%, #ffffff 35%, #ffffff 100%);
     }
 
     a{ color:inherit; text-decoration:none; }
     .wrap{ max-width:var(--max); margin:0 auto; padding:0 18px; }
 
-    /* top nav */
+    /* topbar */
     .topbar{
-      position:sticky;
-      top:0;
-      z-index:40;
+      position:sticky; top:0; z-index:50;
       backdrop-filter: blur(10px);
-      background: linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.52));
-      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.80), rgba(255,255,255,.55));
+      border-bottom:1px solid var(--line);
     }
     .topbar .in{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:12px 0;
-      gap:14px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:12px 0;
+      flex-wrap:wrap;
     }
     .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-width:220px;
+      display:flex; align-items:center; gap:10px;
+      min-width:260px;
     }
-    .brand-badge{
-      width:36px;height:36px;border-radius:12px;
-      background: radial-gradient(circle at 30% 30%, rgba(201,183,255,.85), rgba(242,181,198,.70));
-      box-shadow: 0 8px 18px rgba(0,0,0,.10);
+    .logo{
+      width:42px; height:42px;
+      border-radius:14px;
       border:1px solid rgba(0,0,0,.06);
+      box-shadow: 0 8px 18px rgba(0,0,0,.10);
+      background: rgba(255,255,255,.72);
+      object-fit:contain;
+      padding:6px;
     }
-    .brand .txt{
-      display:flex; flex-direction:column;
-      line-height:1.1;
-    }
-    .brand .txt b{ font-size:14px; }
-    .brand .txt span{ font-size:12px; color:var(--muted); }
+    .brand .t{ line-height:1.1; }
+    .brand .t b{ font-size:14px; }
+    .brand .t span{ display:block; font-size:12px; color:var(--muted); margin-top:2px; }
 
-    .nav{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      justify-content:flex-end;
-    }
+    .nav{ display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
     .pill{
       padding:8px 10px;
       border-radius:999px;
       border:1px solid rgba(0,0,0,.08);
-      background: rgba(255,255,255,.55);
+      background: rgba(255,255,255,.56);
       font-size:13px;
       color:var(--muted);
-      transition: transform .15s ease, background .15s ease;
       user-select:none;
+      transition: transform .15s ease, background .15s ease;
     }
     .pill:hover{ transform: translateY(-1px); background: rgba(255,255,255,.78); }
     .pill.primary{
       color:#2a2340;
       border:1px solid rgba(110,78,170,.22);
-      background: linear-gradient(90deg, rgba(201,183,255,.65), rgba(242,181,198,.55));
+      background: linear-gradient(90deg, rgba(197,183,255,.70), rgba(244,182,199,.58));
     }
 
     /* hero */
-    .hero{
-      position:relative;
-      padding:44px 0 24px;
-    }
-    .hero-bg{
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(1200px 560px at 50% 10%, rgba(255,255,255,.85), rgba(255,255,255,.20)),
-        url("bg-hero.png");
-      background-size: cover, cover;
-      background-repeat:no-repeat, no-repeat;
-      background-position:center, center;
-      opacity:.92;
-      filter: saturate(1.03);
-      pointer-events:none;
-    }
-    .hero .wrap{ position:relative; }
+    .hero{ padding:44px 0 18px; }
     .hero-grid{
       display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap:18px;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
       align-items:stretch;
-      min-height: 380px;
     }
-    @media (max-width: 920px){
-      .hero-grid{ grid-template-columns: 1fr; }
-    }
+    @media (max-width: 920px){ .hero-grid{ grid-template-columns:1fr; } }
 
-    .hero-card{
-      border-radius: var(--radius2);
-      background: linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.60));
-      border: 1px solid rgba(0,0,0,.08);
+    .card{
+      border-radius: var(--r2);
+      border:1px solid rgba(0,0,0,.08);
+      background: linear-gradient(180deg, var(--card), var(--card2));
       box-shadow: var(--shadow);
-      padding:24px 22px;
-      overflow:hidden;
-      position:relative;
+      padding:20px 18px;
     }
-    .hero-title{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
+    .card h1{
+      margin:0;
+      font-size:30px;
+      letter-spacing:-0.6px;
+      line-height:1.2;
     }
     .kicker{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      font-size:13px;
-      color:var(--muted);
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:13px; color:var(--muted);
+      margin-bottom:10px;
     }
     .dot{
-      width:8px;height:8px;border-radius:99px;
+      width:8px; height:8px; border-radius:99px;
       background: rgba(110,78,170,.55);
-      box-shadow: 0 0 0 6px rgba(201,183,255,.28);
+      box-shadow: 0 0 0 6px rgba(197,183,255,.30);
     }
-    h1{
-      margin:0;
-      font-size:34px;
-      letter-spacing:-0.6px;
-      line-height:1.18;
-    }
-    .sub{
-      margin:0;
-      color:var(--muted);
-      font-size:15px;
-      max-width: 56ch;
-    }
-
-    .hero-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:16px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      padding:10px 14px;
-      border-radius: 14px;
-      border:1px solid rgba(0,0,0,.10);
-      background: rgba(255,255,255,.70);
-      box-shadow: var(--shadow2);
-      font-weight:600;
-      font-size:14px;
-      color:#2a2340;
-      cursor:pointer;
-    }
-    .btn:hover{ filter: brightness(1.02); transform: translateY(-1px); }
-    .btn.primary{
-      border:1px solid rgba(110,78,170,.22);
-      background: linear-gradient(90deg, rgba(201,183,255,.75), rgba(242,181,198,.62));
-    }
-    .btn.ghost{
-      background: rgba(255,255,255,.52);
-      font-weight:600;
-      color:var(--muted);
-    }
-
-    .hero-side{
-      display:grid;
-      grid-template-rows: auto 1fr;
-      gap:12px;
-    }
+    .sub{ margin:10px 0 0; color:var(--muted); font-size:14px; }
 
     .mini{
-      border-radius: var(--radius2);
-      border: 1px solid rgba(0,0,0,.08);
+      border-radius: var(--r2);
+      border:1px solid rgba(0,0,0,.08);
       background: linear-gradient(180deg, rgba(255,255,255,.74), rgba(255,255,255,.56));
       box-shadow: var(--shadow2);
       padding:16px 16px;
     }
-    .mini h3{
-      margin:0 0 10px;
-      font-size:14px;
-      color:#2a2340;
-      letter-spacing:-0.2px;
-    }
+    .mini h3{ margin:0 0 10px; font-size:14px; color:#2a2340; }
     .kv{
       display:grid;
-      grid-template-columns: 96px 1fr;
+      grid-template-columns: 104px 1fr;
       gap:8px 10px;
       font-size:13px;
       color:var(--muted);
@@ -233,99 +140,63 @@
     }
     .kv b{ color:var(--ink); font-weight:700; }
 
-    .logo-box{
-      border-radius: var(--radius2);
-      border: 1px solid rgba(0,0,0,.08);
-      background:
-        radial-gradient(520px 240px at 50% 15%, rgba(201,183,255,.40), transparent 60%),
-        radial-gradient(420px 240px at 55% 65%, rgba(242,181,198,.32), transparent 60%),
-        rgba(255,255,255,.60);
+    .actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px;
+      border-radius: 14px;
+      border:1px solid rgba(0,0,0,.10);
+      background: rgba(255,255,255,.72);
       box-shadow: var(--shadow2);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:14px;
-      overflow:hidden;
-      position:relative;
-      min-height: 220px;
+      font-weight:700;
+      font-size:14px;
+      cursor:pointer;
+      color:#2a2340;
+      transition: transform .15s ease, background .15s ease;
     }
-    .logo-box img{
-      max-width: 92%;
-      height:auto;
-      opacity:.96;
-      filter: saturate(1.05);
+    .btn.primary{
+      border:1px solid rgba(110,78,170,.22);
+      background: linear-gradient(90deg, rgba(197,183,255,.78), rgba(244,182,199,.62));
     }
-    .watermark{
-      position:absolute;
-      inset:auto 14px 12px auto;
-      font-size:12px;
-      color:rgba(43,42,51,.45);
-      background: rgba(255,255,255,.45);
-      border:1px solid rgba(0,0,0,.06);
-      padding:6px 10px;
-      border-radius:999px;
-    }
+    .btn.ghost{ background: rgba(255,255,255,.52); color:var(--muted); font-weight:700; }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.80); }
 
     /* sections */
-    section{
-      padding:22px 0;
+    section{ padding:18px 0; }
+    .head{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:14px; margin-bottom:12px;
+      flex-wrap:wrap;
     }
-    .section-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom:12px;
-    }
-    h2{
-      margin:0;
-      font-size:20px;
-      letter-spacing:-0.4px;
-    }
-    .hint{
-      color:var(--muted);
-      font-size:13px;
-    }
+    .head h2{ margin:0; font-size:18px; letter-spacing:-0.3px; }
+    .hint{ font-size:13px; color:var(--muted); }
 
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-    }
-    @media (max-width: 920px){
-      .grid{ grid-template-columns: 1fr; }
-    }
-    .card{
-      border-radius: var(--radius);
-      border: 1px solid rgba(0,0,0,.08);
-      background: linear-gradient(180deg, var(--card), var(--card2));
+    .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    @media (max-width: 920px){ .grid2{ grid-template-columns:1fr; } }
+
+    .panel{
+      border-radius: var(--r);
+      border:1px solid rgba(0,0,0,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.74), rgba(255,255,255,.58));
       box-shadow: var(--shadow2);
       padding:16px 16px;
     }
-    .card h3{
-      margin:0 0 10px;
-      font-size:15px;
-      color:#2a2340;
-    }
+    .panel h3{ margin:0 0 10px; font-size:15px; color:#2a2340; }
+    .panel p{ margin:0; color:var(--muted); font-size:14px; }
 
-    .list{
-      margin:0;
-      padding-left: 16px;
-      color:var(--muted);
-      font-size:14px;
-    }
+    .list{ margin:0; padding-left:16px; color:var(--muted); font-size:14px; }
     .list li{ margin:6px 0; }
 
     .table{
       width:100%;
       border-collapse:separate;
       border-spacing:0;
-      overflow:hidden;
       border-radius: 14px;
+      overflow:hidden;
       border:1px solid rgba(0,0,0,.08);
       background: rgba(255,255,255,.55);
     }
-    .table th,.table td{
+    .table th, .table td{
       padding:10px 10px;
       font-size:13px;
       border-bottom:1px solid rgba(0,0,0,.06);
@@ -333,53 +204,122 @@
     }
     .table th{
       text-align:left;
+      width:160px;
       color:#2a2340;
       background: rgba(255,255,255,.55);
-      width: 160px;
     }
-    .table tr:last-child th,
-    .table tr:last-child td{ border-bottom:none; }
+    .table tr:last-child th, .table tr:last-child td{ border-bottom:none; }
 
-    .wide-bg{
-      background:
-        radial-gradient(1200px 520px at 50% 5%, rgba(255,255,255,.88), rgba(255,255,255,.22)),
-        url("bg-wide.png");
-      background-size: cover, cover;
-      background-repeat:no-repeat, no-repeat;
-      background-position:center, center;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
+    .tagrow{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+    .tag{
+      font-size:12px; color:#3b3450;
+      border:1px solid rgba(110,78,170,.18);
+      background: rgba(197,183,255,.20);
+      padding:6px 10px;
+      border-radius:999px;
     }
 
-    /* footer */
+    .split{ display:grid; grid-template-columns: 1fr; gap:14px; }
+
+    /* photo grid + lightbox */
+    .photo-section{ margin-top: 14px; }
+    .photo-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap:14px;
+      margin-top:12px;
+    }
+    .photo-card{
+      border-radius: 14px;
+      overflow:hidden;
+      border:1px solid rgba(0,0,0,.08);
+      background: rgba(255,255,255,.60);
+      box-shadow: 0 8px 22px rgba(0,0,0,.10);
+    }
+    .photo-card img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      cursor:pointer;
+      display:block;
+      transition: transform .2s ease;
+    }
+    .photo-card:hover img{ transform: scale(1.02); }
+    .caption{
+      padding:10px 10px;
+      font-size:12px;
+      color: rgba(31,31,38,.72);
+      border-top:1px solid rgba(0,0,0,.06);
+      background: rgba(255,255,255,.62);
+    }
+
+    .lightbox-overlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.86);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index: 9999;
+      padding: 18px;
+    }
+    .lightbox-inner{
+      width: min(1100px, 100%);
+      display:grid;
+      gap:10px;
+    }
+    .lightbox-img{
+      width:100%;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.45);
+      background: rgba(255,255,255,.04);
+    }
+    .lightbox-bar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      color: rgba(255,255,255,.88);
+      font-size:13px;
+    }
+    .lightbox-bar .title{
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      max-width: 78%;
+    }
+    .lb-btn{
+      border:1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.10);
+      color: rgba(255,255,255,.92);
+      padding:8px 10px;
+      border-radius: 12px;
+      cursor:pointer;
+      font-weight:700;
+    }
+    .lb-btn:hover{ background: rgba(255,255,255,.16); }
+
     footer{
-      padding:26px 0 46px;
+      padding:28px 0 46px;
+      border-top:1px solid var(--line);
       color:var(--muted);
       font-size:13px;
     }
     .foot{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:space-between;
-    }
-    .small{
-      color:rgba(43,42,51,.55);
-      font-size:12px;
+      display:flex; justify-content:space-between; align-items:center;
+      gap:12px; flex-wrap:wrap;
     }
 
     /* print */
     @media print{
       .topbar{ position:static; }
       .pill, .btn{ display:none !important; }
-      .hero{ padding-top:14px; }
-      .hero-bg{ opacity:.20; }
+      .photo-grid{ grid-template-columns: 1fr 1fr; }
       body{ background:#fff; }
-      .card, .hero-card, .mini, .logo-box{
-        box-shadow:none;
-        background:#fff;
-      }
+      .card, .mini, .panel{ box-shadow:none; background:#fff; }
+      .photo-card{ box-shadow:none; }
     }
   </style>
 </head>
@@ -388,320 +328,370 @@
   <header class="topbar" aria-label="상단 메뉴">
     <div class="wrap">
       <div class="in">
-        <a class="brand" href="#top">
-          <span class="brand-badge" aria-hidden="true"></span>
-          <span class="txt">
-            <b>지원사업 제안 페이지</b>
-            <span>예시 랜딩페이지(1페이지 요약형)</span>
+        <a class="brand" href="#top" aria-label="상단으로 이동">
+          <img class="logo" src="assets/images/logo/haebom_logo.png" alt="해봄 로고" onerror="this.style.display='none'">
+          <span class="t">
+            <b>마당 콘서트 & 전시 운영 제안(예시)</b>
+            <span>충청권 국악문화향유거점 활성화 | 홈페이지형 요약본</span>
           </span>
         </a>
 
         <nav class="nav" aria-label="바로가기">
-          <a class="pill" href="#summary">사업개요</a>
-          <a class="pill" href="#program">프로그램</a>
-          <a class="pill" href="#schedule">일정</a>
-          <a class="pill" href="#budget">예산</a>
-          <a class="pill" href="#kpi">성과지표</a>
-          <a class="pill primary" href="#files">첨부자료</a>
+          <a class="pill" href="#q1">1. 신청 계기</a>
+          <a class="pill" href="#q2">2. 지역 특성</a>
+          <a class="pill" href="#q3">3. 공간 선정</a>
+          <a class="pill" href="#q4">4. 문화교류</a>
+          <a class="pill primary" href="#q5">5. 세부 운영</a>
         </nav>
       </div>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero" aria-label="대표 소개 영역">
-      <div class="hero-bg" aria-hidden="true"></div>
-
+    <section class="hero" aria-label="표지">
       <div class="wrap">
         <div class="hero-grid">
-          <div class="hero-card">
-            <div class="hero-title">
-              <div class="kicker"><span class="dot" aria-hidden="true"></span>지원서용 요약 페이지(홈페이지형) 예시</div>
-              <h1>청춘을 잇다: 해봄 시리즈</h1>
-              <p class="sub">
-                심사자가 “무엇을, 언제, 누구와, 어떤 방식으로, 어떤 성과로” 수행하는지
-                1페이지에서 즉시 확인하도록 구성한 예시이다.
-              </p>
-            </div>
+          <div class="card">
+            <div class="kicker"><span class="dot" aria-hidden="true"></span>지원신청서 문항 흐름(1~5)에 맞춘 정리본</div>
+            <h1>“오래된 미래, 두 개의 천안을 잇는 소리”</h1>
+            <p class="sub">
+              본 페이지는 신청서 본문을 대체하는 문서가 아니라, 핵심 내용을 빠르게 확인할 수 있도록 정리한 홈페이지형 요약본(예시)이다.
+            </p>
 
-            <div class="hero-actions">
-              <a class="btn primary" href="#summary">사업개요 보기</a>
-              <a class="btn" href="#files">자료 다운로드</a>
+            <div class="actions">
+              <a class="btn primary" href="#q5">세부 운영 계획 보기</a>
               <button class="btn ghost" type="button" onclick="window.print()">인쇄(PDF 저장)</button>
             </div>
 
             <div style="margin-top:14px;">
-              <table class="table" aria-label="핵심 정보 요약">
+              <table class="table" aria-label="핵심 정보">
                 <tr>
-                  <th>사업명</th>
-                  <td>청춘을 잇다: 해봄 시리즈 (예시)</td>
+                  <th>사업 구성</th>
+                  <td>콘서트 2회 + 전시 2개 공간 운영</td>
                 </tr>
                 <tr>
-                  <th>주관</th>
-                  <td>단체명(예: 해봄 / 더흥컴퍼니 등) 입력</td>
+                  <th>운영 방향</th>
+                  <td>찾아가는 공연을 넘어, 머무는 공간의 공기(Air, 에어)가 되는 국악</td>
                 </tr>
                 <tr>
-                  <th>목표</th>
-                  <td>지역 공연 1회(또는 교육·공연 복합) 운영 및 결과물(영상·자료) 구축</td>
-                </tr>
-                <tr>
-                  <th>대상</th>
-                  <td>지역 일반 시민 / 청년 / 특정 연령층 등 지원사업 기준에 맞게 입력</td>
+                  <th>도시 연계</th>
+                  <td>해봄 ‘잇다’ 시리즈의 충주 확장(우륵 설화–능소 설화 연결 창작곡 위촉)</td>
                 </tr>
               </table>
             </div>
           </div>
 
-          <div class="hero-side">
-            <div class="mini">
-              <h3>제출용 포맷 안내</h3>
-              <div class="kv" role="list">
-                <b role="listitem">용도</b><span role="listitem">지원사업 심사용 ‘웹 요약본’(보조자료)</span>
-                <b role="listitem">형태</b><span role="listitem">단일 페이지(스크롤형), 인쇄(PDF) 대응</span>
-                <b role="listitem">구성</b><span role="listitem">개요 → 프로그램 → 일정 → 예산 → 성과지표 → 자료</span>
-                <b role="listitem">톤</b><span role="listitem">감성 최소, 정보 우선(그러나 시각 톤은 통일)</span>
+          <aside class="mini" aria-label="기본 입력(예시)">
+            <h3>기본 입력(예시)</h3>
+            <div class="kv" role="list">
+              <b role="listitem">단체명</b><span role="listitem">해봄</span>
+              <b role="listitem">운영 방식</b><span role="listitem">공간 특화형(Site-Specific, 사이트 스페시픽)</span>
+              <b role="listitem">원도심</b><span role="listitem">정(靜) 중심, 체류형 감상</span>
+              <b role="listitem">신도심</b><span role="listitem">동(動) 중심, 참여형 버스킹</span>
+            </div>
+            <div class="tagrow" aria-label="키워드">
+              <span class="tag">정(靜)</span>
+              <span class="tag">동(動)</span>
+              <span class="tag">체류형</span>
+              <span class="tag">참여형</span>
+              <span class="tag">BGM 전시</span>
+              <span class="tag">체험 전시</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Q1 -->
+    <section id="q1" aria-label="1. 신청 계기">
+      <div class="wrap">
+        <div class="head">
+          <h2>1. 신청하게 된 계기</h2>
+          <div class="hint">국악의 일상 접점 확장</div>
+        </div>
+        <div class="panel">
+          <p>
+            기존 국악 공연은 공연장 중심의 ‘목적형 관람’ 구조에 머물러, 일반 시민과의 접점을 확대하는 데 물리적·심리적 장벽이 존재한다.
+            해봄은 시민의 생활 동선과 공간 경험 안으로 국악이 진입하도록 설계하여, 국악을 ‘일상 속 콘텐츠’로 전환하고자 한다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Q2 -->
+    <section id="q2" aria-label="2. 지역 소개 및 운영 방식">
+      <div class="wrap">
+        <div class="head">
+          <h2>2. 신청 지역 소개 및 운영 방식</h2>
+          <div class="hint">이원화된 생활권 반영</div>
+        </div>
+
+        <div class="grid2">
+          <div class="panel">
+            <h3>지역 환경 분석</h3>
+            <ul class="list">
+              <li>천안은 동남구(원도심)와 서북구(신도심)로 생활권이 뚜렷이 구분되어 있다.</li>
+              <li>공간 이용 목적과 관객층 특성이 상이하여, 동일 형식의 프로그램을 일괄 적용하기 어렵다.</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <h3>운영 전략</h3>
+            <ul class="list">
+              <li>원도심: 정(靜) 중심, 자연 음향 기반의 체류형 감상 운영</li>
+              <li>신도심: 동(動) 중심, 토크·호응 요소를 포함한 참여형 버스킹 운영</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Q3 -->
+    <section id="q3" aria-label="3. 공간 선정 이유 및 소개">
+      <div class="wrap">
+        <div class="head">
+          <h2>3. 공간 선정 이유 및 공간 소개</h2>
+          <div class="hint">클릭 시 사진 확대 가능</div>
+        </div>
+
+        <div class="panel">
+          <table class="table" aria-label="공간 목록">
+            <tr>
+              <th>콘서트 1</th>
+              <td>
+                <b>카프닉(Caffnic)</b> (천안시 동남구 향교1길 104-24)<br/>
+                플랜테리어 카페의 환경과 ‘숲·자연’ 레퍼토리가 시각·청각적으로 조응하는 체류형 감상 공간
+              </td>
+            </tr>
+            <tr>
+              <th>콘서트 2</th>
+              <td>
+                <b>천안시청소년복합커뮤니티센터 상상계단</b> (천안시 서북구 불당19로 82)<br/>
+                1~2층 연결 개방형 계단 구조로, 무대 설치 없이도 참여형 버스킹 운영이 가능한 유동형 공간
+              </td>
+            </tr>
+            <tr>
+              <th>전시 1</th>
+              <td>
+                <b>카프닉 내부 갤러리존</b><br/>
+                앨범 아트·사진 아카이빙 + 국악 BGM 송출 + QR 비대면 감상으로 ‘배경형 전시’ 구현
+              </td>
+            </tr>
+            <tr>
+              <th>전시 2</th>
+              <td>
+                <b>천안시청소년복합커뮤니티센터 1층 로비(청다움 카페 앞)</b><br/>
+                전통 12현/개량 25현 가야금 비교 전시 및 1분 체험 프로그램으로 ‘만질 수 있는 전시’ 운영
+              </td>
+            </tr>
+          </table>
+
+          <!-- Photo grids -->
+          <div class="photo-section">
+            <h3 style="margin:18px 0 6px; font-size:14px; color:#2a2340;">공간 사진(예시)</h3>
+            <div class="photo-grid">
+              <div class="photo-card">
+                <img src="assets/images/caffnic/caffnic_exterior.jpg" alt="카프닉 외관" class="js-lightbox" data-title="카프닉 외관">
+                <div class="caption">카프닉 외관(위치·접근성 확인)</div>
+              </div>
+              <div class="photo-card">
+                <img src="assets/images/caffnic/caffnic_interior_01.jpg" alt="카프닉 내부 전경" class="js-lightbox" data-title="카프닉 내부 전경">
+                <div class="caption">카프닉 내부 전경(식물·벽돌·자연광)</div>
+              </div>
+              <div class="photo-card">
+                <img src="assets/images/caffnic/caffnic_gallery.jpg" alt="카프닉 갤러리존" class="js-lightbox" data-title="카프닉 갤러리존">
+                <div class="caption">카프닉 갤러리존(전시 설치 구간)</div>
+              </div>
+
+              <div class="photo-card">
+                <img src="assets/images/youth_center/staircase_overview.jpg" alt="상상계단 전경" class="js-lightbox" data-title="상상계단 전경">
+                <div class="caption">상상계단 전경(1~2층 개방 구조)</div>
+              </div>
+              <div class="photo-card">
+                <img src="assets/images/youth_center/staircase_side.jpg" alt="상상계단 측면" class="js-lightbox" data-title="상상계단 측면">
+                <div class="caption">상상계단 측면(입체 동선·관람 영역)</div>
+              </div>
+              <div class="photo-card">
+                <img src="assets/images/youth_center/lobby_chungdam.jpg" alt="1층 로비 및 청다움 카페 앞" class="js-lightbox" data-title="1층 로비 및 청다움 카페 앞">
+                <div class="caption">1층 로비(체험형 전시 노출 동선)</div>
               </div>
             </div>
-
-            <div class="logo-box" aria-label="로고 이미지 영역">
-              <img src="logo-watercolor.png" alt="해봄 로고(예시 이미지)" onerror="this.style.display='none';" />
-              <div class="watermark">이미지 교체 가능</div>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="summary" aria-label="사업개요">
+    <!-- Q4 -->
+    <section id="q4" aria-label="4. 지속적인 문화 교류 방안">
       <div class="wrap">
-        <div class="section-head">
-          <h2>사업개요</h2>
-          <div class="hint">심사자가 가장 먼저 보는 정보만 압축한다.</div>
+        <div class="head">
+          <h2>4. 지속적인 문화 교류 방안</h2>
+          <div class="hint">충주–천안 연계 구조</div>
         </div>
 
-        <div class="grid">
-          <div class="card">
-            <h3>핵심 요약(3문장)</h3>
-            <ul class="list">
-              <li>본 사업은 (지역/기관명) 지원 목적에 부합하는 (공연/교육/기록) 프로그램을 (기간) 동안 운영한다.</li>
-              <li>(주요 레퍼토리/콘텐츠)로 구성하며, 참여자/관객에게 (구체 성과: 체험·감상·학습·기록물) 도달을 목표로 한다.</li>
-              <li>결과물은 (영상/자료집/성과보고)로 정리하여 사후 활용 가능 구조로 제출한다.</li>
-            </ul>
+        <div class="grid2">
+          <div class="panel">
+            <h3>콘텐츠 확장</h3>
+            <p>
+              해봄의 ‘잇다’ 시리즈를 충주 지역으로 확장하여, 충주의 우륵(가야금) 설화와 천안의 능소(천안삼거리) 설화를 연결하는 창작곡을 위촉한다.
+              위촉 작품은 &lt;충청 소리길 프로젝트&gt; 핵심 레퍼토리로 활용하여, 천안·충주 양 지역 공연에서 교차 연주한다.
+            </p>
           </div>
 
-          <div class="card">
-            <h3>문제-해결 구조(간단)</h3>
+          <div class="panel">
+            <h3>거점 공유·확산</h3>
             <ul class="list">
-              <li>현황: (지역 내 전통예술 접근성/참여 기회 부족 등) 1문장</li>
-              <li>원인: (공연 편중, 교육 부재, 홍보 경로 한정 등) 1문장</li>
-              <li>해결: (맞춤 프로그램 + 결과물 구축 + 재사용 운영체계) 1문장</li>
+              <li>천안·충주 민간 거점 공간(카페 등) 정보를 통합한 온라인 지도 구축</li>
+              <li>청소년 교류(연합 공연/멘토링) 등 후속 협력 모델을 단계적으로 추진</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="program" class="wide-bg" aria-label="프로그램 구성">
+    <!-- Q5 -->
+    <section id="q5" aria-label="5. 공간별 세부 운영 계획">
       <div class="wrap">
-        <div class="section-head" style="padding-top:10px;">
-          <h2>프로그램 구성</h2>
-          <div class="hint">‘무엇을 하는지’를 활동 단위로 쪼갠다.</div>
+        <div class="head">
+          <h2>5. 공간별 세부 운영 계획</h2>
+          <div class="hint">콘서트 2회 + 전시 2개</div>
         </div>
 
-        <div class="grid">
-          <div class="card">
-            <h3>프로그램 1(예: 공연)</h3>
-            <ul class="list">
-              <li>구성: 1부 / 2부 / 3부(또는 단일)로 편성</li>
-              <li>포인트: 레퍼토리 선정 근거(전승·지역·연주 역량) 1~2문장</li>
-              <li>관객 경험: 해설 유무, 관객 동선, 입장/퇴장, 앵콜 등 운영 요소</li>
-            </ul>
-          </div>
+        <div class="split">
 
-          <div class="card">
-            <h3>프로그램 2(예: 교육/체험 또는 기록)</h3>
-            <ul class="list">
-              <li>대상: 학교급/연령/인원</li>
-              <li>활동: (실연) → (체험) → (정리/피드백) 순서로 설계</li>
-              <li>결과물: 참여자 산출물, 설문, 촬영본, 결과보고 반영</li>
-            </ul>
-          </div>
-        </div>
-
-        <div style="height:14px;"></div>
-
-        <div class="card">
-          <h3>운영 체계(역할 분장)</h3>
-          <table class="table" aria-label="운영 체계 표">
-            <tr>
-              <th>총괄</th>
-              <td>사업 총괄, 대외 협의, 일정·예산 관리, 결과보고 책임</td>
-            </tr>
-            <tr>
-              <th>예술감독/연출</th>
-              <td>프로그램 구성, 리허설 운영, 무대 진행 큐시트 확정</td>
-            </tr>
-            <tr>
-              <th>기록/홍보</th>
-              <td>촬영·편집, 아카이브 정리, 홍보물 제작·배포, 관객 안내</td>
-            </tr>
-            <tr>
-              <th>운영 스태프</th>
-              <td>현장 안전, 관객 응대, 장비·물품 관리, 정산 증빙 수집</td>
-            </tr>
-          </table>
-        </div>
-
-        <div style="height:22px;"></div>
-      </div>
-    </section>
-
-    <section id="schedule" aria-label="추진 일정">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>추진 일정</h2>
-          <div class="hint">월 단위로 끊고, 산출물을 같이 적는다.</div>
-        </div>
-
-        <div class="card">
-          <table class="table" aria-label="일정 표">
-            <tr>
-              <th>1단계</th>
-              <td>
-                기획 확정(곡목/출연/장소)  
-                섭외 공문·계약  
-                홍보물 초안 제작
-              </td>
-            </tr>
-            <tr>
-              <th>2단계</th>
-              <td>
-                리허설(정기 연습)  
-                무대 기술 협의(음향/조명 최소 구성 기준)  
-                홍보 본 집행
-              </td>
-            </tr>
-            <tr>
-              <th>3단계</th>
-              <td>
-                본행사 운영(공연/교육)  
-                기록 촬영  
-                관객/참여자 설문
-              </td>
-            </tr>
-            <tr>
-              <th>4단계</th>
-              <td>
-                결과물 편집·정리  
-                정산 증빙 취합  
-                성과보고서 제출
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section id="budget" aria-label="예산 요약">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>예산 요약</h2>
-          <div class="hint">항목은 공고문 체계에 맞추고, 산출근거를 숫자로 고정한다.</div>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <h3>예산표(요약)</h3>
-            <table class="table" aria-label="예산 요약 표">
+          <!-- Concert 1 -->
+          <div class="panel">
+            <h3>콘서트 1회차 | 카프닉(Caffnic)</h3>
+            <table class="table" aria-label="콘서트 1">
+              <tr><th>공연명</th><td>공간 공감(空間 共感) 콘서트 &lt;숲을 거닐다&gt;</td></tr>
+              <tr><th>장르</th><td>힐링 국악(Ambient Traditional Music, 앰비언트 트래디셔널 뮤직)</td></tr>
+              <tr><th>주제</th><td>식물·벽돌 공간의 울림을 활용한 자연 음향 중심 몰입형 치유 음악회</td></tr>
+              <tr><th>시간</th><td>50분 내외</td></tr>
+              <tr><th>출연</th><td>5명(가야금 앙상블, 타악)</td></tr>
               <tr>
-                <th>인건비</th>
-                <td>출연료 / 스태프 인건비 / 기획·운영 인건비</td>
-              </tr>
-              <tr>
-                <th>임차료</th>
-                <td>공간 대관 / 장비 대여(필요 최소)</td>
-              </tr>
-              <tr>
-                <th>홍보비</th>
-                <td>포스터/리플렛/온라인 홍보 집행</td>
-              </tr>
-              <tr>
-                <th>기록비</th>
-                <td>촬영 / 편집 / 아카이브 정리</td>
+                <th>세부내용</th>
+                <td>
+                  전자 음향 장비 사용을 최소화한 자연 음향 중심(Unplugged) 공연으로 운영한다.<br/>
+                  프로그램(예시): 1) &lt;숲(황병기 류)&gt; 2) &lt;천안삼거Re(재즈 발라드)&gt; 3) &lt;침향무&gt;
+                </td>
               </tr>
             </table>
+
+            <div class="photo-section">
+              <div class="photo-grid">
+                <div class="photo-card">
+                  <img src="assets/images/caffnic/caffnic_interior_01.jpg" alt="카프닉 내부 전경" class="js-lightbox" data-title="카프닉(콘서트) 내부 전경">
+                  <div class="caption">공연 운영 구역(전경)</div>
+                </div>
+                <div class="photo-card">
+                  <img src="assets/images/caffnic/caffnic_interior_02.jpg" alt="카프닉 내부 좌석" class="js-lightbox" data-title="카프닉(콘서트) 좌석 배치">
+                  <div class="caption">좌석/테이블 배치(체류형 감상)</div>
+                </div>
+              </div>
+              <div class="hint" style="margin-top:8px;">파일이 없으면 해당 사진은 표시되지 않으므로, 실제 파일명에 맞춰 수정한다.</div>
+            </div>
           </div>
 
-          <div class="card">
-            <h3>산출근거 작성 예시</h3>
-            <ul class="list">
-              <li>대표자(운영총괄) 1,500,000원: 공연 1회 기준, 기획·대외협의·정기연습 운영·정산 및 결과보고 총괄</li>
-              <li>촬영 800,000원: 행사 1회 촬영(2캠) + 편집 1편(3~5분) 납품</li>
-              <li>홍보물 300,000원: 포스터 1종 + 온라인 이미지 6종 제작</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+          <!-- Concert 2 -->
+          <div class="panel">
+            <h3>콘서트 2회차 | 천안시청소년복합커뮤니티센터 상상계단</h3>
+            <table class="table" aria-label="콘서트 2">
+              <tr><th>공연명</th><td>상상계단 버스킹 &lt;해봄 스쿨&gt;</td></tr>
+              <tr><th>장르</th><td>퓨전 국악(크로스오버)</td></tr>
+              <tr><th>주제</th><td>개방형 계단 구조를 활용한 참여형 토크 콘서트</td></tr>
+              <tr><th>시간</th><td>50분 내외</td></tr>
+              <tr><th>출연</th><td>6명(25현 가야금, 드럼)</td></tr>
+              <tr>
+                <th>세부내용</th>
+                <td>
+                  무대·객석 구분이 없는 공간 특성을 활용해 토크(악기 소개/질의응답)와 참여(박수·리듬 호응)를 포함한다.<br/>
+                  프로그램(예시): 1) &lt;비틀즈 메들리&gt; 2) &lt;OST 산책(영화·애니메이션)&gt; 3) &lt;부산행&gt;
+                </td>
+              </tr>
+            </table>
 
-    <section id="kpi" class="wide-bg" aria-label="성과지표">
-      <div class="wrap">
-        <div class="section-head" style="padding-top:10px;">
-          <h2>성과지표</h2>
-          <div class="hint">정량(숫자) + 정성(근거 자료)로 분리한다.</div>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <h3>정량 지표(예시)</h3>
-            <ul class="list">
-              <li>공연 1회(또는 교육 5차시 등): 실적 1건</li>
-              <li>관객/참여자 수: 목표 ○○명 / 실적 ○○명</li>
-              <li>기록물: 영상 ○편, 사진 ○장, 결과보고서 1부</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>정성 지표(예시)</h3>
-            <ul class="list">
-              <li>만족도 설문(5점 척도): 평균 ○.○점</li>
-              <li>서술형 피드백: 핵심 키워드(예: 이해도, 몰입, 재참여 의향) 정리</li>
-              <li>사후 활용: 재공연/재교육 가능 레퍼토리·운영 매뉴얼 확보</li>
-            </ul>
-          </div>
-        </div>
-
-        <div style="height:22px;"></div>
-      </div>
-    </section>
-
-    <section id="files" aria-label="첨부자료">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>첨부자료</h2>
-          <div class="hint">제출 링크를 여기로 모은다(드라이브/유튜브/노션 등).</div>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <h3>필수 자료(예시)</h3>
-            <ul class="list">
-              <li>지원신청서 PDF: (링크)</li>
-              <li>단체소개/실적 자료: (링크)</li>
-              <li>프로그램 상세(큐시트/지도안): (링크)</li>
-              <li>홍보물 시안: (링크)</li>
-            </ul>
+            <div class="photo-section">
+              <div class="photo-grid">
+                <div class="photo-card">
+                  <img src="assets/images/youth_center/staircase_overview.jpg" alt="상상계단 전경" class="js-lightbox" data-title="상상계단 전경(콘서트 운영)">
+                  <div class="caption">계단 전경(관람 영역 형성)</div>
+                </div>
+                <div class="photo-card">
+                  <img src="assets/images/youth_center/staircase_side.jpg" alt="상상계단 측면" class="js-lightbox" data-title="상상계단 측면(동선)">
+                  <div class="caption">입체 구조(무대 설치 최소화)</div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="card">
-            <h3>보조 자료(예시)</h3>
-            <ul class="list">
-              <li>공연 영상(미리보기): (링크)</li>
-              <li>연습/리허설 스케치: (링크)</li>
-              <li>언론/홍보 실적: (링크)</li>
-              <li>협력기관 확인서: (링크)</li>
-            </ul>
+          <!-- Exhibition 1 -->
+          <div class="panel">
+            <h3>전시 1 | 카프닉 내부 갤러리존</h3>
+            <table class="table" aria-label="전시 1">
+              <tr><th>전시명</th><td>청각의 시각화 &lt;오늘의 기분은 어떤가요?&gt;</td></tr>
+              <tr><th>장르</th><td>앰비언트(BGM) 및 아카이빙 전시</td></tr>
+              <tr><th>주제</th><td>앨범 아트·사진 + 국악 BGM 결합을 통한 공감각적 체류형 전시</td></tr>
+              <tr><th>기간</th><td>1주일(상설 운영)</td></tr>
+              <tr><th>출연</th><td>0명(설치·철수 시 인력 투입)</td></tr>
+              <tr>
+                <th>세부내용</th>
+                <td>
+                  1) 시간대별 음원 큐레이션 송출<br/>
+                  2) 아트워크·연주 사진 액자 전시<br/>
+                  3) 테이블 QR로 유튜브 연주 영상 비대면 감상
+                </td>
+              </tr>
+            </table>
+
+            <div class="photo-section">
+              <div class="photo-grid">
+                <div class="photo-card">
+                  <img src="assets/images/caffnic/caffnic_gallery.jpg" alt="갤러리존 벽면" class="js-lightbox" data-title="갤러리존(아카이빙 전시)">
+                  <div class="caption">벽면 전시 구역(액자/아트워크)</div>
+                </div>
+                <div class="photo-card">
+                  <img src="assets/images/caffnic/caffnic_table_qr.jpg" alt="테이블 QR 배너" class="js-lightbox" data-title="QR 비대면 감상">
+                  <div class="caption">테이블 QR(개인화 감상)</div>
+                </div>
+              </div>
+              <div class="hint" style="margin-top:8px;">QR 배너 사진은 실제 보유 시에만 넣고, 없으면 해당 카드 삭제한다.</div>
+            </div>
           </div>
+
+          <!-- Exhibition 2 -->
+          <div class="panel">
+            <h3>전시 2 | 천안시청소년복합커뮤니티센터 1층 로비(청다움 카페 앞)</h3>
+            <table class="table" aria-label="전시 2">
+              <tr><th>전시명</th><td>악기의 재발견 &lt;현(絃)의 진화&gt;</td></tr>
+              <tr><th>장르</th><td>체험형 악기 전시(Interactive, 인터랙티브)</td></tr>
+              <tr><th>주제</th><td>전통 12현과 개량 25현의 구조 차이를 만지고 소리 내며 이해하는 체험 전시</td></tr>
+              <tr><th>기간</th><td>3일</td></tr>
+              <tr><th>출연</th><td>2명(도슨트 및 체험 지도)</td></tr>
+              <tr>
+                <th>세부내용</th>
+                <td>
+                  1) 비교 전시(12현·25현 나란히 배치)<br/>
+                  2) 오픈 체험존 ‘단 한 줄의 울림’(1분 체험)<br/>
+                  3) 포토존 + 인증 이벤트(굿즈 제공)
+                </td>
+              </tr>
+            </table>
+
+            <div class="photo-section">
+              <div class="photo-grid">
+                <div class="photo-card">
+                  <img src="assets/images/youth_center/lobby_chungdam.jpg" alt="로비 및 청다움 카페 앞" class="js-lightbox" data-title="로비(체험형 전시 노출 동선)">
+                  <div class="caption">로비 동선(노출·접근성)</div>
+                </div>
+                <div class="photo-card">
+                  <img src="assets/images/youth_center/interactive_zone_mock.jpg" alt="체험존 예시" class="js-lightbox" data-title="체험존(예시)">
+                  <div class="caption">체험존 구성(예시 이미지)</div>
+                </div>
+              </div>
+              <div class="hint" style="margin-top:8px;">체험존 예시 사진이 없으면 두 번째 카드 삭제한다.</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -710,17 +700,19 @@
       <div class="wrap">
         <div class="foot">
           <div>
-            <div><b>문의</b> 담당자명 / 연락처 / 이메일 (지원서 표기 기준과 동일하게)</div>
-            <div class="small">본 페이지는 예시이며, 실제 제출 시 공고문 요구 항목과 표기 규정을 우선 적용한다.</div>
+            <b>문의</b> 담당자명 / 연락처 / 이메일 (실제 정보로 교체)
+            <div style="margin-top:6px; font-size:12px; color:rgba(31,31,38,.55);">
+              본 페이지는 지원신청서 내용을 홈페이지 형식으로 정리한 예시이다.
+            </div>
           </div>
-          <div class="small">© 단체명. All rights reserved.</div>
+          <div style="font-size:12px; color:rgba(31,31,38,.55);">© 해봄. All rights reserved.</div>
         </div>
       </div>
     </footer>
   </main>
 
   <script>
-    // 부드러운 스크롤(브라우저 기본이 지원되면 자동 적용되지만, 보조로 넣음)
+    // Smooth anchor scroll
     (function(){
       document.querySelectorAll('a[href^="#"]').forEach(function(a){
         a.addEventListener('click', function(e){
@@ -731,6 +723,64 @@
           e.preventDefault();
           el.scrollIntoView({behavior:'smooth', block:'start'});
           history.pushState(null, '', id);
+        });
+      });
+    })();
+
+    // Lightbox (click to open, ESC / overlay click to close)
+    (function(){
+      function openLightbox(src, title){
+        var overlay = document.createElement('div');
+        overlay.className = 'lightbox-overlay';
+        overlay.setAttribute('role','dialog');
+        overlay.setAttribute('aria-modal','true');
+
+        var inner = document.createElement('div');
+        inner.className = 'lightbox-inner';
+
+        var bar = document.createElement('div');
+        bar.className = 'lightbox-bar';
+
+        var t = document.createElement('div');
+        t.className = 'title';
+        t.textContent = title || '';
+
+        var closeBtn = document.createElement('button');
+        closeBtn.className = 'lb-btn';
+        closeBtn.type = 'button';
+        closeBtn.textContent = '닫기(ESC)';
+
+        bar.appendChild(t);
+        bar.appendChild(closeBtn);
+
+        var img = document.createElement('img');
+        img.className = 'lightbox-img';
+        img.src = src;
+        img.alt = title || '확대 이미지';
+
+        inner.appendChild(bar);
+        inner.appendChild(img);
+        overlay.appendChild(inner);
+        document.body.appendChild(overlay);
+
+        function close(){
+          overlay.remove();
+          document.removeEventListener('keydown', onKey);
+        }
+        function onKey(e){
+          if(e.key === 'Escape') close();
+        }
+
+        closeBtn.addEventListener('click', close);
+        overlay.addEventListener('click', function(e){
+          if(e.target === overlay) close();
+        });
+        document.addEventListener('keydown', onKey);
+      }
+
+      document.querySelectorAll('.js-lightbox').forEach(function(el){
+        el.addEventListener('click', function(){
+          openLightbox(el.getAttribute('src'), el.getAttribute('data-title') || el.getAttribute('alt'));
         });
       });
     })();
